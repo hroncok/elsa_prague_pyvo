@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.6
+script:
+- python website.py freeze
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: python website.py deploy --no-freeze --push
+  on:
+    branch: master
+    repo: hroncok/elsa_prague_pyvo
+env:
+  global:
+    secure: Csj4bJSlkImEdAxURtGmtTEocMDeVkjK7tdvbkpvrtg/UrFbFv55bIM/JLGtKNYkvFB+RVSgl6TEWYsT47yiJANccHg53Iy6UjjVc9o9VEgfU0CNRxaqjCFGkTfZJPsDnrhrmV63HGcIBXVsV4cFR6Apy+y7FY7XxQ2qrxK85KYPDtcAdURlsvn0gV3TJyHUyoQTbDl3u+d5w/NYUh6wv/ydx4oIUf9ECyvf8/vRUjPGNf7yXRjBzPBSo1oj2M1VvN0C6mkEhLeMvkdeorXsR5AQGaHNmaCMSKrSPylXefkUP1iGzUYUNB+uPRvsoT9WuVnH99N8VojtsG58R0ezzHCzdGsQDHG36pUJN2lzUGqGt9VuTed2F8TNYrBv5VQvI67Ohq7ItnZ7qvp1R4ceUeX0l78n4SeW1JncDUNAmjkt1QImWZQ4pUdKsSHU0paZsg9BXF4agq8NTJYHw2pJ2injKaPd4UxIsDBryLb0qt+wRbI4ky2Lqt8M0mB9dwKjEe16NSPsahtAcH41/XQ1J0NMIfLwgNgZQGeJCjMhJqRi8xYBj8n7khhRNSoaJjwhxkJOx7Xt1kqoEsYOlgmffYQDmF2OgV89X15P+svozUjEUtXrGEXaN1AcGF5JZvWys9YslJUihcJJn/3+6jQRcFQ4/QnXj70uWujENEUeFbQ=
